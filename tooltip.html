@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            p {
+                width: max-content;
+                padding: 1rem;
+                color: #333;
+                margin: 8rem auto 0 auto;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+            p span {
+                position: relative;
+                width: 100%;
+                display: block;
+            }
+
+            p span::before {
+                content: attr(data-msg-tooltip);
+                position: absolute;
+                width: max-content;
+                margin-top: 1rem;
+                padding: 5px 10px;
+                font-weight: medium;
+                font-size: 1rem;
+                background-color: #2a2a2a;
+                border-radius: 3px;
+                color: #cccfd3;
+                transition: all 0.2s;
+                opacity: 0;
+                display: none;
+            }
+
+            p:hover  span::before {
+                opacity: 1;
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Aqui tem uma dica no mouse hover!
+            <span data-msg-tooltip="Durma cedo!"></span>
+        </p>
+    </body>
+</html>
